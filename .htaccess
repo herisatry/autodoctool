@@ -1,0 +1,9 @@
+# basic password protection
+AuthName Private
+AuthType Basic
+AuthUserFile /hsphere/local/home/zeuprof/calctools.herisatry.com/.htpasswd
+Require valid-user
+
+ErrorDocument 404 http://calctools.herisatry.com/
+
+

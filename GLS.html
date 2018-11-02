@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>AUTODOC CALCULATOR TOOLS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.css" integrity="sha256-KestrgzinnQ30P2oSFlACALp586eQsA8yqWSJnJvdX4=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/custom.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ </head>
+<body class="bg-dark text-white">
+        <div class="container-fluid">
+                <nav class="navbar navbar-light  d-flex justify-content-center">
+                  <span id="dt"></span>
+                </nav>
+                <header></header>
+              
+                <div class="w3-row">
+                  <a href="index.html">
+                    <div class="w3-quarter tablink w3-bottombar w3-hover-light-grey w3-padding ">Расчет выгоды возвратов по SO</div>
+                  </a>
+                  <a href="date_calc.html" >
+                    <div class="w3-quarter tablink w3-bottombar w3-hover-light-grey w3-padding">Расчет срока возврата</div>
+                  </a>
+                  <a href="GLS.html" >
+                    <div class="w3-quarter tablink w3-bottombar w3-hover-light-grey w3-padding w3-border-red">Расчет выгоды GLS</div>
+                  </a>
+                  <a href="TVA_calc.html" >
+                    <div class="w3-quarter tablink w3-bottombar w3-hover-light-grey w3-padding">НДС комбинации</div>
+                  </a>
+                </div>
+<main>
+    <!-- //main content goes here -->
+
+    <form class="container mt-5" action="" method="POST">
+
+            <div class="form-group">
+                <label for="blank_type">Цена Бланк</label>
+                <select class="form-control selectpicker " data-live-search="true" id="blank_type">
+                  <option selected>Выберите страну...</option>
+                  <option value="8.50" >Austria / Австрия - DHL</option>
+                  <option value="5.99" >Belgium / Бельгия - DPD</option>
+                  <option value="9.00" >Belgium / Бельгия - DHL</option>
+                  <option value="15.00">Bulgaria / Болгария - DHL</option>
+                  <option value="13.50">Cyprus / Кипр - DHL</option>
+                  <option value="8.20">Czech Republic /Чешская республика - DHL</option>                
+                  <option value="8.48">Denmark / Дания - DPD </option>
+                  <option value="10.50">Denmark / Дания - DHL</option>
+                  <option value="13.89">Estonia / Эстония - DPD</option>
+                  <option value="12.00">Estonia / Эстония -DHL</option>
+                  <option value="16.55">Finland / Финландия - DPD</option>
+                  <option value="10.50">Finland / Финландия - DHL</option>
+                  <option value="8.55">France / Франция - DPD</option>
+                  <option value="12.00">France / Франция - DHL</option>
+                  <option value="9.05">Great Britain / Великобритания - DPD</option>
+                  <option value="10.50">Great Britain / Великобритания DHL</option>
+                  <option value="28.00">Greece / Греция - DHL</option>
+                  <option value="8.00">Hungary / Венгрия - DHL</option>
+                  <option value="13.50">Italy / Италия - DHL</option>
+                  <option value="18.00">Irland / Ирландия - DHL</option>
+                  <option value="13.89">Latvia / Латвия - DPD</option>
+                  <option value="15.00">Latvia / Латвия - DHL</option>
+                  <option value="13.89">Lithuania / Литва - DPD</option>
+                  <option value="15.00">Lithuania / Литва - DHL</option>
+                  <option value="6.57">Luxembourg / Люксембург - DPD</option>
+                  <option value="8.00">Luxembourg / Люксембург - DHL</option>
+                  <option value="8.55">Netherlands / Нидерланды - DPD</option>
+                  <option value="9.00">Netherlands / Нидерланды - DHL</option>
+                  <option value="9.20">Poland / Польша - DHL</option>                
+                  <option value="13.89">Portugal / Португалия - DPD</option>
+                  <option value="28.00">Portugal / Португалия - DHL</option>
+                  <option value="15.00">Romania / Румыния - DHL</option>
+                  <option value="11.50">Sweden / Швеция - DPD</option>
+                  <option value="19.30">Sweden / Швеция - DHL</option>
+                  <option value="8.00">Slovakia / Словакия - DHL</option>
+                  <option value="8.00">Slovenia / Словения - DHL</option>
+                  <option value="11.50">Spain / Испания - DPD</option>
+                  <option value="15.00">Spain / Испания - DHL</option>
+                  <option value="11.50">Switzerland / Швейцария - DHL</option>
+                </select>
+              </div>
+  
+            <div class="form-group">
+              <label for="zakupka">Закуп. € </label>
+              <input type="text" class="form-control" id="zakupka" placeholder="Закуп. €">
+            </div>
+            <label for="dakod">Доход без НДС</label>         
+                <div class="input-group mb-3 ">
+                    
+                    <input type="text" class="form-control" placeholder="Доход без НДС" id="dakod">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary text-white" type="button" onclick="myfunc()">Расчитать</button>
+                    </div>
+                  </div>
+  
+          </form>
+  
+      <!-- div to display results -->
+  
+      <div class="row">
+          <div role="alert" id="rez"></div>
+      </div>
+</main>
+</body>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="assets/app.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.js" integrity="sha256-WqN9dPtCScaV4IoqahquHBT+WnkH/nqjm12Hv82c8l8=" crossorigin="anonymous"></script>
+<footer class="mt-10">
+    <div class="container text-white ">
+    <p>Safe Order Calculator tools &copy; 2018 Design by <a href="http://herisatry.com/" target="_blank">Herisatry</a></p>
+    </div>
+</footer>
+</html>
