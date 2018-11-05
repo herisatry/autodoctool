@@ -35,51 +35,23 @@
 <main>
     <!-- //main content goes here -->
 
-    <form class="container mt-5" action="" method="POST">
+    <form class="container mt-5 glsForm" action="" method="POST" id="glsForm">
 
             <div class="form-group">
-                <label for="blank_type">Цена Бланк</label>
-                <select class="form-control selectpicker " data-live-search="true" id="blank_type">
+                <label for="blank_type">Категория : </label>
+                <select class="form-control selectpicker " data-live-search="true" id="category">
                   <option selected>Выберите страну...</option>
-                  <option value="8.50" >Austria / Австрия - DHL</option>
-                  <option value="5.99" >Belgium / Бельгия - DPD</option>
-                  <option value="9.00" >Belgium / Бельгия - DHL</option>
-                  <option value="15.00">Bulgaria / Болгария - DHL</option>
-                  <option value="13.50">Cyprus / Кипр - DHL</option>
-                  <option value="8.20">Czech Republic /Чешская республика - DHL</option>                
-                  <option value="8.48">Denmark / Дания - DPD </option>
-                  <option value="10.50">Denmark / Дания - DHL</option>
-                  <option value="13.89">Estonia / Эстония - DPD</option>
-                  <option value="12.00">Estonia / Эстония -DHL</option>
-                  <option value="16.55">Finland / Финландия - DPD</option>
-                  <option value="10.50">Finland / Финландия - DHL</option>
-                  <option value="8.55">France / Франция - DPD</option>
-                  <option value="12.00">France / Франция - DHL</option>
-                  <option value="9.05">Great Britain / Великобритания - DPD</option>
-                  <option value="10.50">Great Britain / Великобритания DHL</option>
-                  <option value="28.00">Greece / Греция - DHL</option>
-                  <option value="8.00">Hungary / Венгрия - DHL</option>
-                  <option value="13.50">Italy / Италия - DHL</option>
-                  <option value="18.00">Irland / Ирландия - DHL</option>
-                  <option value="13.89">Latvia / Латвия - DPD</option>
-                  <option value="15.00">Latvia / Латвия - DHL</option>
-                  <option value="13.89">Lithuania / Литва - DPD</option>
-                  <option value="15.00">Lithuania / Литва - DHL</option>
-                  <option value="6.57">Luxembourg / Люксембург - DPD</option>
-                  <option value="8.00">Luxembourg / Люксембург - DHL</option>
-                  <option value="8.55">Netherlands / Нидерланды - DPD</option>
-                  <option value="9.00">Netherlands / Нидерланды - DHL</option>
-                  <option value="9.20">Poland / Польша - DHL</option>                
-                  <option value="13.89">Portugal / Португалия - DPD</option>
-                  <option value="28.00">Portugal / Португалия - DHL</option>
-                  <option value="15.00">Romania / Румыния - DHL</option>
-                  <option value="11.50">Sweden / Швеция - DPD</option>
-                  <option value="19.30">Sweden / Швеция - DHL</option>
-                  <option value="8.00">Slovakia / Словакия - DHL</option>
-                  <option value="8.00">Slovenia / Словения - DHL</option>
-                  <option value="11.50">Spain / Испания - DPD</option>
-                  <option value="15.00">Spain / Испания - DHL</option>
-                  <option value="11.50">Switzerland / Швейцария - DHL</option>
+                  <option value="8.50" >ITALIA / Италия </option>
+                  <option value="5.99" >NORWAY / Норвегия </option>
+                  <option value="9.00" >PORTUGAL / Португалия</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="blank_type"> Выбор весь пакета : </label>
+                <select class="form-control selectpicker " data-live-search="true" id="choices">
+                  <option selected>Выберите весь...</option>
+                  
                 </select>
               </div>
   
