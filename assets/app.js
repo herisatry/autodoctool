@@ -71,9 +71,9 @@ function myfunc() {
         //let's create arrays
         var ITALIA = [
           {display: "Dark chocolate", value: "4" }, 
-          {display: "Milk chocolate", value: "milk-chocolate" }, 
-          {display: "White chocolate", value: "white-chocolate" },
-          {display: "Gianduja chocolate", value: "gianduja-chocolate" }];
+          {display: "Milk chocolate", value: "3" }, 
+          {display: "White chocolate", value: "4" },
+          {display: "Gianduja chocolate", value: "7" }];
           
         var NORWAY = [
           {display: "Broccoli", value: "broccoli" }, 
@@ -117,3 +117,19 @@ function myfunc() {
         }
         
         });
+
+
+
+
+
+// menu activation 
+
+
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}

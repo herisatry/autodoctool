@@ -13,28 +13,39 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
  </head>
-<body class="bg-dark text-white">
+<body class="bg-dark ">
+        <!-- Sidebar -->
+<div class=" w3-sidebar w3-bar-block w3-animate-left" style="display:none;z-index:5" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+    <a href="index.html" class="w3-bar-item w3-button">
+        Расчет выгоды возвратов по SO
+      </a>
+      <a href="date_calc.html" class="w3-bar-item w3-button" >
+        Расчет срока возврата
+      </a>
+      <a href="date_calc.html" class="w3-bar-item w3-button" >
+          Расчет потеря пакет
+        </a>
+      <a href="GLS.html" class="w3-bar-item w3-button" >
+        Расчет выгоды GLS
+      </a>
+      <a href="TVA_calc.html" class="w3-bar-item w3-button" >
+        НДС комбинации
+      </a>
+  </div>
+  
+  <!-- Page Content -->
+  <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+  
+  <div>
+      <button class="w3-button bg-dark w3-xxlarge text-white " onclick="w3_open()">&#9776; MENU</button>
+  
         <div class="container-fluid">
                 <nav class="navbar navbar-light  d-flex justify-content-center">
                   <span id="dt"></span>
                 </nav>
                 <header></header>
-              
-                <div class="w3-row">
-                  <a href="index.html">
-                    <div class="w3-quarter tablink w3-bottombar w3-hover-light-grey w3-padding ">Расчет выгоды возвратов по SO</div>
-                  </a>
-                  <a href="date_calc.html" >
-                    <div class="w3-quarter tablink w3-bottombar w3-hover-light-grey w3-padding">Расчет срока возврата</div>
-                  </a>
-                  <a href="GLS.html" >
-                    <div class="w3-quarter tablink w3-bottombar w3-hover-light-grey w3-padding w3-border-red">Расчет выгоды GLS</div>
-                  </a>
-                  <a href="TVA_calc.html" >
-                    <div class="w3-quarter tablink w3-bottombar w3-hover-light-grey w3-padding">НДС комбинации</div>
-                  </a>
-                </div>
-<main>
+<main class="text-white">
     <!-- //main content goes here -->
 
     <form class="container mt-5 glsForm" action="" method="POST" id="glsForm">
@@ -75,6 +86,8 @@
           <div role="alert" id="rez"></div>
       </div>
 </main>
+
+
 </body>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="assets/app.js"></script>
