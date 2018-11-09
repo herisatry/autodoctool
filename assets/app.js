@@ -61,6 +61,15 @@ function myfunc() {
       document.getElementById('rezultat').className= 'alert alert-success'
       document.getElementById("rezultat").innerHTML = "количество дней которые прошли между датами получения пакета и рекламации : "  + diffDays + " "+ ". срок не истек. "
     }
+
+    else if (gridRadios[2].checked && 14-diffDays >= 0) {
+      document.getElementById('rezultat').className= 'alert alert-success'
+      document.getElementById("rezultat").innerHTML = "количество дней которые прошли между датами получения пакета и рекламации : "  + diffDays + " "+ ". срок не истек. "
+    }
+    else if (gridRadios[2].checked && 14-diffDays < 0) {
+      document.getElementById('rezultat').className= 'alert alert-danger'
+      document.getElementById("rezultat").innerHTML = "количество дней которые прошли между датами получения пакета и рекламации : "  + diffDays + " "+ ". срок истек. "
+    }
       
     }
     
@@ -70,22 +79,24 @@ function myfunc() {
       
         //let's create arrays
         var ITALIA = [
-          {display: "Dark chocolate", value: "4" }, 
-          {display: "Milk chocolate", value: "3" }, 
-          {display: "White chocolate", value: "4" },
-          {display: "Gianduja chocolate", value: "7" }];
-          
-        var NORWAY = [
-          {display: "Broccoli", value: "broccoli" }, 
-          {display: "Cabbage", value: "cabbage" }, 
-          {display: "Carrot", value: "carrot" },
-          {display: "Cauliflower", value: "cauliflower" }];
+          {display: "Пакет до 40 Кг", value: "13.41" }, 
+          {display: "Пакет от 41 Кг до 50 Кг", value: "24.67" }];
           
         var PORTUGAL = [
-          {display: "Frozen yogurt", value: "frozen-yogurt" }, 
-          {display: "Booza", value: "booza" }, 
-          {display: "Frozen yogurt", value: "frozen-yogurt" },
-          {display: "Ice milk", value: "ice-milk" }];
+          {display: "Пакет от 0 Кг до 10 Кг", value: "21.66" }, 
+          {display: "Пакет от 11 Кг до 15 Кг", value: "27.07" }, 
+          {display: "Пакет от 16 Кг до 25 Кг", value: "30.19" },
+          {display: "Пакет от 26 Кг до 30 Кг", value: "33.53" }];
+          
+        var NORWAY = [
+          {display: "Пакет от 0 Кг до 2 Кг", value: "38.74"},
+          {display: "Пакет от 3 Кг до 5 Кг", value: "39.92"},
+          {display: "Пакет от 6 Кг до 10 Кг", value: "41.45"},
+          {display: "Пакет от 11 Кг до 15 Кг", value: "42.88"},
+          {display: "Пакет от 16 Кг до 25 Кг", value: "45.78"}, 
+          {display: "Пакет от 26 Кг до 30 Кг", value: "47.5"}, 
+          {display: "Пакет от 31 Кг до 40 Кг", value: "49.35" },
+          {display: "Пакет от 41 Кг до 50 Кг", value: "52.02"}];
         
         //If country option is changed
         $("#country_selection").change(function() {
@@ -117,6 +128,131 @@ function myfunc() {
         }
         
         });
+
+
+
+// TVA combinaison
+
+var billing_tva = document.getElementsById("billing_tva").value;
+var shipping_tva = document.getElementsById("shipping_tva").value;
+
+//combinaison 1
+function func_tva() { 
+
+  if (billing_tva == "b1") {
+    if (shipping_tva == "s1") {
+
+      document.getElementById('tva_result').className= 'container alert alert-success'
+      document.getElementById('tva_result').innerHTML = " combinaison 11"
+
+    }
+    else if (shipping_tva == "s2") {
+
+      document.getElementById('tva_result').className= 'container alert alert-success'
+      document.getElementById('tva_result').innerHTML = " combinaison 12"
+
+    }
+    else if (shipping_tva == "s3") {
+
+      document.getElementById('tva_result').className= 'container alert alert-success'
+      document.getElementById('tva_result').innerHTML = " combinaison 13"
+
+    }
+
+    else {
+
+      document.getElementById('tva_result').className= 'container alert alert-success'
+      document.getElementById('tva_result').innerHTML = " combinaison 14"
+
+    }
+  }
+/* //combinaison 2
+  else if (billing_tva === "b2") {
+    if (shipping_tva === "s1") {
+
+      document.getElementById('tva_result').className= 'container alert alert-success'
+      document.getElementById('tva_result').innerHTML = " combinaison 21"
+
+    }
+    else if (shipping_tva === "s2") {
+
+      document.getElementById('tva_result').className= 'container alert alert-success'
+      document.getElementById('tva_result').innerHTML = " combinaison 22"
+
+    }
+    else if (shipping_tva === "s3") {
+
+      document.getElementById('tva_result').className= 'container alert alert-success'
+      document.getElementById('tva_result').innerHTML = " combinaison 23"
+
+    }
+
+    else {
+
+      document.getElementById('tva_result').className= 'container alert alert-success'
+      document.getElementById('tva_result').innerHTML = " combinaison 24"
+
+    }
+  }
+//combinaison 3
+  else if (billing_tva === "b3") {
+    if (shipping_tva === "s1") {
+
+      document.getElementById('tva_result').className= 'container alert alert-success'
+      document.getElementById('tva_result').innerHTML = " combinaison 31"
+
+    }
+    else if (shipping_tva === "s2") {
+
+      document.getElementById('tva_result').className= 'container alert alert-success'
+      document.getElementById('tva_result').innerHTML = " combinaison 32"
+
+    }
+    else if (shipping_tva === "s3") {
+
+      document.getElementById('tva_result').className= 'container alert alert-success'
+      document.getElementById('tva_result').innerHTML = " combinaison 33"
+
+    }
+
+    else {
+
+      document.getElementById('tva_result').className= 'container alert alert-success'
+      document.getElementById('tva_result').innerHTML = " combinaison 34"
+
+    }
+  }
+//combinaison 4
+  else {
+    if (shipping_tva === "s1") {
+
+      document.getElementById('tva_result').className= 'container alert alert-success'
+      document.getElementById('tva_result').innerHTML = " combinaison 41"
+
+    }
+    else if (shipping_tva === "s2") {
+
+      document.getElementById('tva_result').className= 'container alert alert-success'
+      document.getElementById('tva_result').innerHTML = " combinaison 42"
+
+    }
+    else if (shipping_tva === "s3") {
+
+      document.getElementById('tva_result').className= 'container alert alert-success'
+      document.getElementById('tva_result').innerHTML = " combinaison 43"
+
+    }
+
+    else {
+
+      document.getElementById('tva_result').className= 'container alert alert-success'
+      document.getElementById('tva_result').innerHTML = " combinaison 44"
+
+    }
+  } */
+
+
+}
 
 
 

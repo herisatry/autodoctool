@@ -50,17 +50,17 @@
 
             <div class="form-group">
                 <label for="blank_type">Биллинг</label>
-                <select class="form-control selectpicker " data-live-search="true" id="blank_type">
+                <select class="form-control " name="billing_tva" id="billing_tva">
                   <option selected>Выберите значения НДС-а...</option>
-                  <option value="b2" >Фирма подтверждена</option>
-                  <option value="b1" >Фирма неподтверждена</option>
+                  <option value="b1" >Фирма подтверждена</option>
+                  <option value="b2" >Фирма неподтверждена</option>
                   <option value="b3" >страна не ЕС/особая територия</option>
                   <option value="b4">Физическое лицо</option>                  
                 </select>
               </div>
               <div class="form-group">
                 <label for="blank_type">Шиппинг </label>
-                <select class="form-control selectpicker " data-live-search="true" id="blank_type">
+                <select class="form-control " name="shipping_tva" id="shipping_tva">
                   <option selected>Выберите значения НДС-а...</option>
                   <option value="s1" >Фирма подтверждена</option>
                   <option value="s2" >Фирма неподтверждена</option>
@@ -68,9 +68,9 @@
                   <option value="s4">Физическое лицо</option>
                 </select>
               </div>
-         
+         <br>
                 <div>
-                    <button class="btn btn-outline-secondary text-white" type="button" onclick="myfunc()">Комбинация</button>
+                    <button class="btn btn-outline-secondary text-white" type="button" onclick="func_tva();">Комбинация</button>
                 </div>
   
           </form>
@@ -78,7 +78,7 @@
       <!-- div to display results -->
   
       <div class="row">
-          <div role="alert" id="rez"></div>
+          <div role="alert" id="tva_result"></div>
       </div>
 </main>
 
